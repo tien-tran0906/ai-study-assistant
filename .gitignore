@@ -2,6 +2,7 @@ mistral-7b-instruct-v0.2.Q5_K_M.gguf
 config.json
 credentials.json
 token.json
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
