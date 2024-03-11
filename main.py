@@ -81,7 +81,7 @@ def doc_content(content, id, creds):
 
 def main():
     title = 'test doc'
-    content = 'Hello world'
+    content = 'Hello world!'
     creds = get_credentials()
     id = get_doc_id(title, creds)
     doc_content(content, id, creds)
