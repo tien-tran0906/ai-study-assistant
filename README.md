@@ -6,18 +6,28 @@ https://github.com/tien-tran0906/ai-study-assistant/assets/117805369/12e011f1-c0
 
 (Video is 1.5x speed)
 
-- install Ollama (https://ollama.com/)
-- create a virtual env and activate it
-- pip install -r requirements.txt
-- ollama pull mistral:instruct (should say "success" at the end, when you successfully pulled the model)
-- setup Google credentials: https://youtu.be/j7JlI6IAdQ0?si=KojsK6d9KiRioJ0w (enable both Google Drive and Google Docs API, get credentials.json, watch until 7:25)
-   - NOTE: After getting your folder_id (video at 11:30): go to "backend", create a separate "config.json" in this format:
-     ```json
-     {
-        "folder_id": "PASTE_YOUR_FOLDER_ID_HERE"
-      }
-     ```
+### Project tree
+<img width="326" alt="Screenshot 2024-03-18 at 3 37 43 AM" src="https://github.com/tien-tran0906/ai-study-assistant/assets/117805369/bf8501b9-c34d-4df8-943e-0781a6d3e2d2">
+
+### Setup
+
+- Install [Ollama](https://ollama.com/)
+- Create a virtual environment and activate it
+- Run `pip install -r requirements.txt`
+- Run `ollama pull mistral:instruct` (should say "success" at the end when the model is successfully pulled)
+
+### Setting up Google Credentials
+
+- Watch [this video](https://youtu.be/j7JlI6IAdQ0?si=KojsK6d9KiRioJ0w) and follow the instructions to enable both Google Drive and Google Docs API, get `credentials.json` (watch until 7:25)
+- After getting your `folder_id` (video at 11:30), go to the "backend" directory and create a separate `config.json` file with the following format:
+
+   ```json
+   {
+     "folder_id": "PASTE_YOUR_FOLDER_ID_HERE"
+   }
 
 - Add the code to Google extension: https://www.youtube.com/watch?v=B8Ihv3xsWYs&t=2s (until 10:30)
-- cd backend && uvicorn main:app --reload
+
+### Usage
+- Run `cd backend && uvicorn main:app --reload`
 - Use the extension! (Google is going to ask you to sign in to write to the doc)
