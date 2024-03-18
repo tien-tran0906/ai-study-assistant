@@ -3,7 +3,7 @@
 
 
 https://github.com/tien-tran0906/ai-study-assistant/assets/117805369/12e011f1-c080-4b6c-a052-cdd3b043c00c
-
+(Video is 1.5x speed)
 
 
 1. pip install -r requirements.txt
