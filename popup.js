@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var inputText = document.getElementById('input');
   var outputLink = document.getElementById('output-link');
   var loadingGif = document.getElementById('loading-gif');
+  var copyRightElement = document.getElementById('gif-copyright')
+  var loading = document.getElementById('loading')
 
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     chrome.tabs.sendMessage(
@@ -92,16 +94,21 @@ document.addEventListener('DOMContentLoaded', function () {
   linkGeneratorButton.addEventListener('click', function () {
     var fileName = outputFileName.value.trim();
     if (fileName !== '') {
-      loadingGif.style.display = 'block';
+      // loadingGif.style.display = 'block';
+      loading.style.display = 'block';
+      copyRightElement.style.display = 'block';
       var dataToSend = {
         action: 'generateLink',
         context: inputText.innerText,
         fileName: fileName,
       };
       sendDataToAPI(dataToSend, function (result) {
-        loadingGif.style.display = 'none'; // Hide loading GIF
+        console.log(result)
+        loadingGif.style.display = 'none';
+        loading.style.display = 'none';
+        copyRightElement.style.display = 'none';
         outputLink.innerHTML =
-          '<a href="' + result + '" target="_blank">' + result + '</a>';
+          '<a href="' + result.doc_url + '" target="_blank">' + result.doc_url + '</a>';
       });
     } else {
       outputLink.innerHTML = 'Please enter a valid file name.';

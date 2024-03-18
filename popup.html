@@ -11,7 +11,7 @@
   <body>
     <h1>AI Study Assistant</h1>
     <br />
-    <h3>Selected Text</h3>
+    <h2>Selected Text</h2>
     <div
       class="editable"
       contenteditable="false"
@@ -34,8 +34,22 @@
     </div>
 
     <div id="output" class="editable" contenteditable="false">
-      <h2>Link to generated File</h2>
-      <div id="loading-gif" style="display:none"></div>
+      <h3>Link to generated File</h3>
+      <div id="loading-gif">
+        <div id="loading" style="display:none"></div>
+        <p id="gif-copyright" style="display:none">
+          GIF by
+          <a
+            href="https://pixabay.com/users/blendertimer-9538909/?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=37"
+            >Daniel Roberts</a
+          >
+          from
+          <a
+            href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=animation&utm_content=37"
+            >Pixabay</a
+          >
+        </p>
+      </div>
       <div class="generated-link" id="output-link"></div>
     </div>
 

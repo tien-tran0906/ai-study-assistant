@@ -6,7 +6,7 @@ from langchain.llms import LlamaCpp
 from langchain.prompts import PromptTemplate
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from google_api_settings import load_config, get_credentials, get_doc_id, doc_content
+from google_api import get_credentials, get_doc_id, doc_content
 
 app = FastAPI()
 

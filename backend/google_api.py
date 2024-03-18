@@ -37,7 +37,7 @@ def get_credentials():
     return creds
 
 
-# get specific Google doc ID
+# get ID of a specific Google document
 def get_doc_id(title, creds):
     config = load_config()
 
@@ -50,6 +50,7 @@ def get_doc_id(title, creds):
         raise ValueError("folder_id is not set in the configuration")
 
     doc_title = title
+
     # create new doc in the specified folder
     doc_metadata = {
         'name': doc_title,
@@ -57,31 +58,28 @@ def get_doc_id(title, creds):
         'mimeType': 'application/vnd.google-apps.document'
     }
     doc = drive_service.files().create(body=doc_metadata).execute()
-    # get id of the new doc
+
+    # get ID of the newly created doc
     id = doc['id']
     return id
 
 
+def doc_content(content, doc_id, creds):
+    try:
+        creds = None
+        # get credentials if not provided
+        if os.path.exists('token.json'):
+            creds = Credentials.from_authorized_user_file('token.json', ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/document'])
+        docs_service = build('docs', 'v1', credentials=creds)
+        requests = [
+            {
+                'insertText': {'location': {'index':1}, 'text': content}
+            }
+        ]
+        docs_service.documents().batchUpdate(documentId=doc_id, body={'requests': requests}).execute()
 
-def doc_content(content, id, creds):
-    creds = None
-    if os.path.exists('token.json'):
-        creds = Credentials.from_authorized_user_file('token.json', ['https://www.googleapis.com/auth/drive', 'https://www.googleapis.com/auth/document'])
-    docs_service = build('docs', 'v1', credentials=creds)
-    requests = [
-        {
-            'insertText': {'location': {'index':1}, 'text': content}
-        }
-    ]
-    docs_service.documents().batchUpdate(documentId=id, body={'requests': requests}).execute()
-
-
-def create_and_get_doc_url():
-    title = 'test doc'  # get title from UI
-    content = 'Hello world!'    # replace this with response
-    creds = get_credentials()
-    id = get_doc_id(title, creds)
-    doc_url = f"https://docs.google.com/document/d/{id}"
-    print('DOC URL', doc_url)
-    doc_content(content, id, creds)
-
+        return True
+    
+    except Exception as e:
+        print(f"Error inserting content into document: {e}")
+        return False

@@ -14,6 +14,10 @@ h1 {
   color: #fff;
 }
 
+h2 {
+  color: #fff;
+}
+
 h3,
 .h3 {
   color: #fff;
@@ -91,15 +95,37 @@ output-file-name {
 }
 
 #loading-gif {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* min-width: 300px;
+  min-height: 300px; */
+  height: 100%;
+  width: 100%;
+}
+
+#loading {
   background: url('assets/gifs/loading.gif') no-repeat center center;
   height: 100%;
   width: 100%;
   z-index: 9999999;
 }
 
+#gif-copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0.5rem;
+  padding-bottom: 1rem;
+}
+
 a {
-  text-decoration: none;
-  color: #16e16e;
+  text-decoration: underline;
+  color: #68cde8;
+  font-weight: bold;
+  
 }
 
 a:hover {
