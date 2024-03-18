@@ -7,7 +7,8 @@ https://github.com/tien-tran0906/ai-study-assistant/assets/117805369/12e011f1-c0
 (Video is 1.5x speed)
 
 ### Project tree
-<img width="326" alt="Screenshot 2024-03-18 at 3 37 43 AM" src="https://github.com/tien-tran0906/ai-study-assistant/assets/117805369/bf8501b9-c34d-4df8-943e-0781a6d3e2d2">
+<img width="252" alt="Screenshot 2024-03-18 at 4 16 37 PM" src="https://github.com/tien-tran0906/ai-study-assistant/assets/117805369/f7dac845-372a-4b62-aac3-0386b33b5df6">
+
 
 ### Setup
 
