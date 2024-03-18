@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Study Assistant</title>
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>AI Study Assistant</h1>
+    <br />
+    <h3>Selected Text</h3>
+    <div
+      class="editable"
+      contenteditable="false"
+      id="input"
+      placeholder="Loading..."
+    ></div>
+    <br />
+    <br />
+    <div class="output-container">
+      <label for="output-file-name" class="h3">Output File Name:</label>
+      <input
+        type="text"
+        class="file-name"
+        contenteditable="true"
+        id="output-file-name"
+      />
+      <br />
+      <br />
+      <button id="link-generator">Generate File</button>
+    </div>
+
+    <div id="output" class="editable" contenteditable="false">
+      <h2>Link to generated File</h2>
+      <div id="loading-gif" style="display:none"></div>
+      <div class="generated-link" id="output-link"></div>
+    </div>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>

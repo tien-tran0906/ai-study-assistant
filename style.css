@@ -1,0 +1,107 @@
+@font-face {
+  font-family: proxima-nova;
+  src: url('assets/fonts/Proxima-Nova-Font.otf');
+}
+
+body {
+  background-color: #353441;
+  font-family: proxima-nova;
+  width: 400px;
+  height: 400px;
+}
+
+h1 {
+  color: #fff;
+}
+
+h3,
+.h3 {
+  color: #fff;
+}
+
+.h3 {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.editable {
+  font-family: proxima-nova;
+  resize: none;
+  background-color: #454754;
+  color: #d1d5ca;
+  font-size: 1rem;
+  width: 94vw;
+  border: 0px;
+  border-radius: 2px;
+  padding: 1vw;
+  overflow-y: scroll;
+}
+
+.editable:empty:before {
+  content: attr(placeholder);
+  opacity: 0.5;
+}
+
+.editable::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.output-container {
+  resize: none;
+  background-color: #454754;
+  color: #d1d5ca;
+  font-size: 1rem;
+  width: 94vw;
+  border: 0px;
+  border-radius: 2px;
+  padding: 1vw;
+  overflow-y: scroll;
+}
+
+.output-container:empty:before {
+  content: attr(placeholder);
+  opacity: 0.5;
+}
+
+.output-container::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+  }
+}
+
+output-file-name {
+  background-color: #fff;
+  padding-left: 1rem;
+
+  @media screen and (min-width: 1024px) {
+    padding-left: 1.5rem;
+  }
+}
+
+#input {
+  height: 60px;
+}
+
+#output {
+  height: 270px;
+}
+
+#loading-gif {
+  background: url('assets/gifs/loading.gif') no-repeat center center;
+  height: 100%;
+  width: 100%;
+  z-index: 9999999;
+}
+
+a {
+  text-decoration: none;
+  color: #16e16e;
+}
+
+a:hover {
+  cursor: pointer;
+}
