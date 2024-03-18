@@ -1,4 +1,5 @@
 # AI Study Assistant
+### A Google extension that create Q&A pairs for you to meticulously prepare for any tests!
 
 1. pip install -r requirements.txt
 2. ollama pull mistral:instruct
