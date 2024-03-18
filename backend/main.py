@@ -6,8 +6,6 @@ from langchain_community.llms import Ollama
 from langchain.callbacks.base import BaseCallbackHandler
 from langchain.callbacks.manager import CallbackManager
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
-
-from model_setup import setup_llm_model
 from google_api import get_credentials, get_doc_id, doc_content
 
 app = FastAPI()
