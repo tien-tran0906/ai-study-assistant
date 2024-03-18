@@ -10,7 +10,7 @@ https://github.com/tien-tran0906/ai-study-assistant/assets/117805369/12e011f1-c0
 - create a virtual env and activate it
 - pip install -r requirements.txt
 - ollama pull mistral:instruct (should say "success" at the end, when you successfully pulled the model)
-- Setup Google credentials: https://youtu.be/j7JlI6IAdQ0?si=KojsK6d9KiRioJ0w (enable both Google Drive and Google Docs API, get credentials.json, watch until 7:25)
+- setup Google credentials: https://youtu.be/j7JlI6IAdQ0?si=KojsK6d9KiRioJ0w (enable both Google Drive and Google Docs API, get credentials.json, watch until 7:25)
    - NOTE: After getting your folder_id (video at 11:30): go to "backend", create a separate "config.json" in this format:
      ```json
      {
